@@ -1,28 +1,33 @@
 import './App.css';
+import { useState } from 'react';
+import Break from './Break/Break';
+import Session from './Session/Session';
+import Time from './Time/Time';
+import Buttons from './Buttons/Buttons';
 
 function App() {
+  const [breakTime, setBreakTime] = useState(5);
+  const [sessionTime, setSessionTime] = useState(58);
+  const [time, setTime] = useState('25:00');
+  const [start, setStart] = useState(false);
+  
+  const resetTimer = () => {
+    setBreakTime(5);
+    setSessionTime(25);
+    setTime('25:00');
+    setStart(false);
+  }
+
   return (
     <div className="App">
-      <div id="break-container">
-        <div id="break-label">Break Length</div>
-        <div id="break-decrement">down</div>
-        <div id="break-increment">up</div>
-        <div id="break-length">5</div>
+      <h1>25 + 5 Clock</h1>
+      <div id="section-1">
+        <Break breakTime={breakTime} setBreakTime={setBreakTime} />
+        <Session sessionTime={sessionTime} setSessionTime={setSessionTime} time={time} setTime={setTime} />
       </div>
-      <div id="session-container">
-        <div id="session-label">Session Length</div>
-        <div id="session-decrement">down</div>
-        <div id="session-increment">up</div>
-        <div id="session-length">25</div>
-      </div>
-      <div id="time-container">
-        <div id="timer-label">Session</div>
-        <div id="time-left">25:00</div>
-      </div>
-      <div id="buttons-container">
-        <div id="start_stop">start</div>
-        <div id="reset">reset</div>
-      </div>
+      <Time time={time} start={start} setStart={setStart} sessionTime={sessionTime}/>
+      <Buttons resetTimer={resetTimer} start={start} setStart={setStart}/>
+      <div>Created by <a>DinosMpo</a></div>
     </div>
   );
 }
