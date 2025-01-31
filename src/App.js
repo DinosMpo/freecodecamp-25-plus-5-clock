@@ -7,16 +7,20 @@ import Buttons from './Buttons/Buttons';
 
 function App() {
   const [breakTime, setBreakTime] = useState(5);
-  const [sessionTime, setSessionTime] = useState(58);
+  const [sessionTime, setSessionTime] = useState(25);
   const [time, setTime] = useState('25:00');
   const [start, setStart] = useState(false);
-  
+  const [counterTime, setCounterTime] = useState(Number((time[0] + time[1]) * 60 * 1000) + (Number(time[3] + time[4]) * 1000));
+
   const resetTimer = () => {
     setBreakTime(5);
     setSessionTime(25);
     setTime('25:00');
+    setCounterTime(1500000);
     setStart(false);
   }
+
+  // console.log(counterTime);
 
   return (
     <div className="App">
@@ -25,7 +29,7 @@ function App() {
         <Break breakTime={breakTime} setBreakTime={setBreakTime} />
         <Session sessionTime={sessionTime} setSessionTime={setSessionTime} time={time} setTime={setTime} />
       </div>
-      <Time time={time} start={start} setStart={setStart} sessionTime={sessionTime}/>
+      <Time counterTime={counterTime} setCounterTime={setCounterTime} time={time} start={start} setStart={setStart} sessionTime={sessionTime} setTime={setTime} />
       <Buttons resetTimer={resetTimer} start={start} setStart={setStart}/>
       <div>Created by <a>DinosMpo</a></div>
     </div>

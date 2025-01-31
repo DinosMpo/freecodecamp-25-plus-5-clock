@@ -18,3 +18,26 @@
   justify-content: center;
   gap: 30px;
 }
+
+#time-container {
+  background-color: rgb(255, 255, 149);
+  width: 100%;
+  max-width: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  flex-direction: column;
+  border-radius: 10px;
+}
+
+#timer-label {
+  font-size: 30px;
+  font-family: 'Arial';
+}
+
+#time-left {
+  font-size: 40px;
+  font-family: 'Arial';
+  /* color: white; */
+}
