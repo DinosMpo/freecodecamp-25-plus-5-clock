@@ -4,7 +4,7 @@ import './Session.css';
 export default function Session({ sessionTime, setSessionTime, setTime }) {
     const sessionsOptions = (type) => {
         if(type === 'dec') {
-            if(sessionTime >0) {
+            if(sessionTime > 1) {
                 setSessionTime(prev => prev-1);
                 setTime((sessionTime - 1) + ':00');
             }

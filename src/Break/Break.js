@@ -4,9 +4,13 @@ import './Break.css';
 export default function Break({ breakTime, setBreakTime }) {
     const breakOptions = (type) => {
         if(type === 'dec') {
-            setBreakTime(prev => prev-1);
+            if(breakTime > 1) {
+                setBreakTime(prev => prev-1);
+            }
         }else if(type === 'inc') {
-            setBreakTime(prev => prev + 1);
+            if(breakTime < 60) {
+                setBreakTime(prev => prev + 1);
+            }
         }
     }
 
