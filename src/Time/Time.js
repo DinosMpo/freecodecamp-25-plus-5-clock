@@ -4,22 +4,20 @@ import './Time.css';
 export default function Time({ counterTime, setCounterTime, time, start, setStart, sessionTime, setTime, breakTime, breakActive, setBreakActive }) {
     //time 25:00
     // const [counterTime, setCounterTime] = useState(Number((time[0] + time[1]) * 60 * 1000) + (Number(time[3] + time[4]) * 1000));
-
+    const audioElement = document.getElementById('beep');
     //if the timer have start and every second run this code
     useEffect(() => {
         if (start) {
-            // if(counterTime == 0 && breakActive == false) {
-            //     setCounterTime(Number((time[0] + time[1]) * 60 * 1000) + (Number(time[3] + time[4]) * 1000));
-            // }
             const interval = setInterval(() => {
                 if (counterTime > 0) {
                     setCounterTime(counterTime - 1000);
                     // setTime(time - 1);
-                } else if (counterTime == 0 && breakActive == false) {
+                } else if (counterTime === 0 && breakActive === false) {
                     // setStart(false);
+                    audioElement.play();
                     setBreakActive(true);
                     setCounterTime(breakTime * 60 * 1000);
-                } else if (counterTime == 0 && breakActive == true) {
+                } else if (counterTime === 0 && breakActive === true) {
                     // setStart(false);
                     setBreakActive(false);
                     setCounterTime(time.length > 4 ? Number((time[0] + time[1]) * 60 * 1000) + (Number(time[3] + time[4]) * 1000) : Number((time[0]) * 60 * 1000) + (Number(time[2] + time[3]) * 1000));

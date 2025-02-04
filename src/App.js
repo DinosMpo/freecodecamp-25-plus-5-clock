@@ -20,16 +20,25 @@ function App() {
     setCounterTime(1500000);
     setStart(false);
     setBreakActive(false);
+    const audioElement = document.getElementById("beep");
+    audioElement.pause();
+    audioElement.currentTime = 0;
   }
-
-  // console.log(counterTime);
 
   return (
     <div className="App">
       <h1>25 + 5 Clock</h1>
       <div id="section-1">
-        <Break breakTime={breakTime} setBreakTime={setBreakTime} />
-        <Session sessionTime={sessionTime} setSessionTime={setSessionTime} time={time} setTime={setTime} />
+        <Break
+          breakTime={breakTime}
+          setBreakTime={setBreakTime}
+        />
+        <Session
+          sessionTime={sessionTime}
+          setSessionTime={setSessionTime}
+          time={time}
+          setTime={setTime}
+        />
       </div>
       <Time
         counterTime={counterTime}
@@ -50,6 +59,7 @@ function App() {
         counterTime={counterTime}
         breakActive={breakActive}
       />
+      <audio id="beep" src="./beep-warning-6387.mp3"></audio>
       <div>Created by <a>DinosMpo</a></div>
     </div>
   );
