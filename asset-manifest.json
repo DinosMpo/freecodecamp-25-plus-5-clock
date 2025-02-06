@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/freecodecamp-25-plus-5-clock/static/css/main.aaf0ebe0.css",
+    "main.js": "/freecodecamp-25-plus-5-clock/static/js/main.3472d40c.js",
+    "index.html": "/freecodecamp-25-plus-5-clock/index.html",
+    "main.aaf0ebe0.css.map": "/freecodecamp-25-plus-5-clock/static/css/main.aaf0ebe0.css.map",
+    "main.3472d40c.js.map": "/freecodecamp-25-plus-5-clock/static/js/main.3472d40c.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.aaf0ebe0.css",
+    "static/js/main.3472d40c.js"
+  ]
+}
