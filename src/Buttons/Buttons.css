@@ -17,3 +17,8 @@
 #reset {
     font-size: 24px;
 }
+
+#start-pause-icon, #reset-icon {
+    width: 20px;
+    cursor: pointer;
+}

@@ -1,5 +1,4 @@
 #break-container {
-    /* border: 1px solid black; */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -17,14 +16,8 @@
     font-family: 'Arial';
 }
 
-/* #break-length {
-    font-size: 24px;
-    font-family: 'Arial';
-} */
-
 #break-dec-inc-buttons {
     display: flex;
     width: 100%;
-    /* border: 1px solid black; */
     justify-content: space-evenly;
 }

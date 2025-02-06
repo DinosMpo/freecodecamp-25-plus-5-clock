@@ -1,4 +1,3 @@
-import React from 'react'
 import './Session.css';
 
 export default function Session({ sessionTime, setSessionTime, setTime }) {
@@ -20,9 +19,13 @@ export default function Session({ sessionTime, setSessionTime, setTime }) {
         <div id="session-container">
             <div id="session-label">Session Length</div>
             <div id="session-dec-inc-buttons">
-                <div id="session-decrement" onClick={() => sessionsOptions('dec')} >down</div>
+                <div id="session-decrement" onClick={() => sessionsOptions('dec')}>
+                    <img className="down-arrow" src="./down-arrow-icon.png" alt="down arrow" title="descend"/>
+                </div>
                 <div id="session-length">{sessionTime}</div>
-                <div id="session-increment" onClick={() => sessionsOptions('inc')}>up</div>
+                <div id="session-increment" onClick={() => sessionsOptions('inc')}>
+                    <img className="up-arrow" src="./up-arrow-icon.png" alt="up arrow" title="ascend"/>
+                </div>
             </div>
         </div>
     )

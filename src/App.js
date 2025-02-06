@@ -27,40 +27,43 @@ function App() {
 
   return (
     <div className="App">
-      <h1>25 + 5 Clock</h1>
-      <div id="section-1">
-        <Break
-          breakTime={breakTime}
-          setBreakTime={setBreakTime}
-        />
-        <Session
-          sessionTime={sessionTime}
-          setSessionTime={setSessionTime}
+      <div id="container">
+        <h1 id="title">25 + 5 Clock</h1>
+        <div id="section-1">
+          <Break
+            breakTime={breakTime}
+            setBreakTime={setBreakTime}
+          />
+          <Session
+            sessionTime={sessionTime}
+            setSessionTime={setSessionTime}
+            time={time}
+            setTime={setTime}
+          />
+        </div>
+        <Time
+          counterTime={counterTime}
+          setCounterTime={setCounterTime}
           time={time}
+          start={start}
+          setStart={setStart}
+          sessionTime={sessionTime}
           setTime={setTime}
+          breakTime={breakTime}
+          breakActive={breakActive}
+          setBreakActive={setBreakActive}
         />
+        <Buttons
+          resetTimer={resetTimer}
+          start={start}
+          setStart={setStart}
+          counterTime={counterTime}
+          breakActive={breakActive}
+        />
+        <audio id="beep" src="./beep-warning-6387.mp3"></audio>
       </div>
-      <Time
-        counterTime={counterTime}
-        setCounterTime={setCounterTime}
-        time={time}
-        start={start}
-        setStart={setStart}
-        sessionTime={sessionTime}
-        setTime={setTime}
-        breakTime={breakTime}
-        breakActive={breakActive}
-        setBreakActive={setBreakActive}
-      />
-      <Buttons
-        resetTimer={resetTimer}
-        start={start}
-        setStart={setStart}
-        counterTime={counterTime}
-        breakActive={breakActive}
-      />
-      <audio id="beep" src="./beep-warning-6387.mp3"></audio>
-      <div>Created by <a>DinosMpo</a></div>
+      <div>Created by <a href="https://github.com/DinosMpo" target="_blank" rel="noreferrer">DinosMpo</a></div>
+
     </div>
   );
 }

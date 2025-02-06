@@ -1,5 +1,5 @@
 #time-container {
-    background-color: rgb(255, 255, 149);
+    background-color: rgb(255, 255, 179);
     width: 100%;
     max-width: 300px;
     display: flex;
@@ -18,7 +18,7 @@
 #time-left {
     font-size: 40px;
     font-family: 'Arial';
-    /* color: white; */
+    font-weight: bold;
 }
 
 .break-time {
